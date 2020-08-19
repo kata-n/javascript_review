@@ -1,10 +1,10 @@
-//varはundifinde型が作られエラーにならない
+//varは変数を宣言する前に呼び出ししてもundifinde型が作られエラーにならない
 
 console.log(example);
 
 var example = 0;
 
-//letやconstはエラーになる
+//letやconstは変数を宣言する前に呼び出すとエラーになる
 console.log(example2);
 
 let example2 = 0;
