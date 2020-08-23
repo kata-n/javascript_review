@@ -28,3 +28,25 @@ const increment2 = incrementFactory();
 increment2();
 increment2();
 increment2();
+
+function main() {
+  {
+    var xxx = 'c';
+  }
+  console.log(xxx);
+}
+main();
+
+
+//関数の関数の生成を行う際にも使用される
+function addNumberFactory(num) {
+  function addNumber(value) {
+    return num + value;
+  }
+  return addNumber
+}
+
+const addfunction = addNumberFactory(5);
+// const addresult = addfunction(10);
+const addresult = addfunction(5);
+console.log('動的な関数の実行結果：' + addresult);
