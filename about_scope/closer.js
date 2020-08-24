@@ -38,6 +38,8 @@ function main() {
 main();
 
 
+
+
 //関数の関数の生成を行う際にも使用される
 function addNumberFactory(num) {
   function addNumber(value) {
@@ -46,7 +48,9 @@ function addNumberFactory(num) {
   return addNumber
 }
 
+//引数によって動的に関数の実行をしてくれる
 const addfunction = addNumberFactory(5);
-// const addresult = addfunction(10);
-const addresult = addfunction(5);
-console.log('動的な関数の実行結果：' + addresult);
+const addresult1 = addfunction(10);
+const addresult2 = addfunction(5);
+console.log('動的な関数の実行結果：' + addresult1);
+console.log('動的な関数の実行結果：' + addresult2);
