@@ -37,9 +37,6 @@ function main() {
 }
 main();
 
-
-
-
 //関数の関数の生成を行う際にも使用される
 function addNumberFactory(num) {
   function addNumber(value) {
@@ -54,3 +51,28 @@ const addresult1 = addfunction(10);
 const addresult2 = addfunction(5);
 console.log('動的な関数の実行結果：' + addresult1);
 console.log('動的な関数の実行結果：' + addresult2);
+
+
+//即時関数 関数定義と同時に一度だけ実行される関数
+let sokuzi = (function () {
+
+  let privateValue = 0;
+  let publicValue = 100;
+
+  function privateFn() {
+    console.log('privateFn is called');
+  }
+
+  function publicFn() {
+    console.log('publicFn is called');
+  }
+
+  //publicValue,publicFnは外からでも呼べる様にする（returnを使用)
+  return {
+    publicFn,
+    publicValue
+  };
+
+})()
+
+sokuzi.publicValue();
