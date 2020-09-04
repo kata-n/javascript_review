@@ -8,3 +8,10 @@ var example = 0;
 console.log(example2);
 
 let example2 = 0;
+
+//AND条件とOR条件
+function hello(programing) {
+  programing = programing || 'Vue.js'
+  console.log('Hello' + programing);
+}
+hello()
