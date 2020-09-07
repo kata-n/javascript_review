@@ -1,15 +1,24 @@
 //1メソッド呼び出しパターン
-var MyObject = {
+let MyObject1 = {
   value: 10,
   show: function () {
-    //このthisはMyObject（メソッド）を指している
-    //console.log(MyObject.value);同じ意味
     console.log(this.value); //MyObjectの中の”10”
     console.log(this); //MyObject
   }
 }
-MyObject.show(); //ここでメソッド呼び出し
+//オブジェクトのメソッドを呼び出した時のthisは、オブジェクト自身をさす
+//console.log(MyObject.value)と同じ意味
+MyObject1.show();
 
+//アロー関数で書かれていると、挙動が変わるので（アロー関数はthisを扱えない）注意
+let MyObjectArrow = {
+  value: 10,
+  show: () => {
+    console.log(this.value); //WindowオブジェクトのValueを探しに行ってしまう
+    console.log(this); //Window
+  }
+}
+MyObjectArrow.show();
 
 //2.関数の呼び出しパターン
 //関数呼び出しのthisはWindowオブジェクトを指す
@@ -46,17 +55,21 @@ console.log(MyObject.myvalue); //4
 
 
 //4apply,call呼び出しパターン
-var MyObject = {
+let MyObject4 = {
   value: 1;
   show: function () {
     console.log(this.value);
   }
 };
-var yourObject = {
+
+let yourObject = {
   value: 3;
 };
 
-MyObject.show(); //1
+//オブジェクトのメソッドを実行（1メソッド呼び出しパターン）
+MyObject4.show(); //1
 //appryやcallを使うとthisを指定する事ができる
-MyObject.show.apply(yourObject); //3
-MyObject.show.call(yourObject); //3
+//applyは実行まで行う、配列に対応している
+MyObject4.show.apply(yourObject); //3
+//callは実行まで行う、配列には対応していない
+MyObject4.show.call(yourObject); //3

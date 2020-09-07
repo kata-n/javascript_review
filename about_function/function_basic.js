@@ -13,7 +13,7 @@ function add() {
 }
 
 
-//コールバック関数
+//＊コールバック関数
 //jsは関数を値として扱えるので、関数に関数を渡す事ができる(高階関数)
 
 //渡された関数を実行する関数
@@ -26,3 +26,22 @@ function doTwiceGreeting(func) {
 doTwiceGreeting(function (message) {
   console.log(message);
 })
+
+
+//＊コンストラクタ関数
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+  // プロトタイプ使わない書き方
+  // this.hello = hello = function () {
+  //   console.log('Hello' + this.name);
+  // }
+}
+
+//コンストラクタ関数にメソッドを追加する（プロトタイプ）
+//上記personオブジェクトにHelloメソッドを追加する
+//プロトタイプを使うと、オブジェクトをいくら生成しても下記の関数が参照先となる為下記の関数一つで済む。メモリの効率化となる。
+//（プロトタイプを使わずに上記コンストラクタ関数内に書くと、インスタンス化する度に別々の下記関数が作られるので、メモリを圧迫する）
+Person.prototype.hello = function () {
+  console.log('Hello' + this.name);
+}
