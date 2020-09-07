@@ -45,3 +45,15 @@ function Person(name, age) {
 Person.prototype.hello = function () {
   console.log('Hello' + this.name);
 }
+
+
+//関数コンストラクタは、大文字から始まるFunctionの事（あまり使わない）
+const constructfunction1 = new Function('number1', 'number2', 'return number1 + number2');
+
+//普通に書いた場合
+function Calctest2(number1, number2) {
+  return number1 + number2;
+}
+
+const result = constructfunction1(1, 2);
+console.log(result);
