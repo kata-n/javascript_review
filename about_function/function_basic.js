@@ -28,32 +28,16 @@ doTwiceGreeting(function (message) {
 })
 
 
-//＊コンストラクタ関数
-function Person(name, age) {
-  this.name = name;
-  this.age = age;
-  // プロトタイプ使わない書き方
-  // this.hello = hello = function () {
-  //   console.log('Hello' + this.name);
-  // }
-}
+//ビルドインオブジェクト
+//windowオブジェクトに格納されているもの、検証でwindowと打ち込んだときに頭文字が大文字のものがビルドインオブジェクト
+//JSは関数もオブジェクトである
 
-//コンストラクタ関数にメソッドを追加する（プロトタイプ）
-//上記personオブジェクトにHelloメソッドを追加する
-//プロトタイプを使うと、オブジェクトをいくら生成しても下記の関数が参照先となる為下記の関数一つで済む。メモリの効率化となる。
-//（プロトタイプを使わずに上記コンストラクタ関数内に書くと、インスタンス化する度に別々の下記関数が作られるので、メモリを圧迫する）
-Person.prototype.hello = function () {
-  console.log('Hello' + this.name);
-}
+//ラッパーオブジェクト
+//プリミティブ値はラッパーオブジェクトをもつ
+const a = "komozi".toUpperCase();
+console.log(a);
 
-
-//関数コンストラクタは、大文字から始まるFunctionの事（あまり使わない）
-const constructfunction1 = new Function('number1', 'number2', 'return number1 + number2');
-
-//普通に書いた場合
-function Calctest2(number1, number2) {
-  return number1 + number2;
-}
-
-const result = constructfunction1(1, 2);
-console.log(result);
+//上記を丁寧に書くと
+const b = new String("komozi");
+//メソッドが作られる
+console.log(b.toUpperCase());
