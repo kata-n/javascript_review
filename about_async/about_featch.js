@@ -11,3 +11,6 @@ async function getUsers() {
 }
 //実行
 getUsers();
+
+
+//例外処理
