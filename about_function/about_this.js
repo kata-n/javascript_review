@@ -10,7 +10,7 @@ let MyObject1 = {
 //console.log(MyObject.value)と同じ意味
 MyObject1.show();
 
-//アロー関数で書かれていると、挙動が変わるので（アロー関数はthisを扱えない）注意
+//アロー関数で書かれていると、挙動が変わる（アロー関数はthisを扱えない）注意
 let MyObjectArrow = {
   value: 10,
   show: () => {
