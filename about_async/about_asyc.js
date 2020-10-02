@@ -26,6 +26,7 @@ function sleep(callback_value) {
     }, 2000);
   });
 }
+
 //async関数のなかでswaitを使う
 async function init() {
   let callvalue = await sleep(0);
