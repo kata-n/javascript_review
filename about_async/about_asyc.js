@@ -13,6 +13,8 @@ sleep(function () {
 //ES6 Promise 非同期処理をより簡単に書ける
 new Promise(function (resolve, reject) {
   console.log('promise');
+}).then(function (data) {
+  console.log(data);
 })
 
 //AwaitとAsync
