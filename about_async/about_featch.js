@@ -20,7 +20,7 @@ async function fetchUsers() {
     return json;
   }
 }
-
+//async
 async function init() {
   const users = await fetchUsers();
   for (const user of users) {
