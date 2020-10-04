@@ -12,7 +12,6 @@ async function getUsers() {
 //実行
 getUsers();
 
-
 //例外処理の書き方
 async function fetchUsers() {
   const response = await fetch('users.json');

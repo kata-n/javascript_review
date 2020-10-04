@@ -4,7 +4,6 @@ function Pokemon(name, type) {
 }
 
 Object.defineProperty(Pokemon.prototype, 'name', {
-
   get: function () {
     return this._name;
   },
