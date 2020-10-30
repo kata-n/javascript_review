@@ -1,8 +1,13 @@
 <template></template>
 <script>
 export default {
-  data() {},
-  methods: function () {},
+  data() {
+    return {};
+  },
+  methods: {
+    test1: function () {},
+    test3: function () {},
+  },
   mounted: function () {},
 };
 </script>
