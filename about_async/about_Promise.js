@@ -11,4 +11,6 @@ function sleep(val) {
 Promise.all([sleep(2)])
 sleep(0).then(function (val) {
   return sleep(val);
+}).then(function (val) {
+  return sleep(val);
 });
