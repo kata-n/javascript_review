@@ -1,3 +1,4 @@
+//https://sbfl.net/blog/2016/07/13/simplifying-async-code-with-promise-and-async-await/
 //コールバックを実行する関数
 function callbackrecieved(callbackfn) {
   console.log('callback.exe');
